@@ -1,0 +1,13 @@
+<h2>Users</h2>
+<% User.all.each do |user| %>
+	<%= link_to "/users/#{user.id}" do %>
+		<%= user.id %> - <%= user.email %> <br>
+	<% end %>
+<% end %>
+
+<h2>Pins</h2>
+<% Pin.all.each do |pin| %>
+	<%= link_to pin_path(pin) do %>
+		<%= pin.id %> - <%= pin.created_at.strftime("%D %r") %> <br>
+	<% end %>
+<% end %>

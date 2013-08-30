@@ -1,11 +1,15 @@
 Omrails::Application.routes.draw do
+  get "users/show"
+
   resources :pins
 
 
   devise_for :views
 
   devise_for :users
+  match 'users/:id' => 'users#show', as: :user
 
+  get 'data' => 'pages#data'
   get 'about' => 'pages#about'
   root :to => 'pins#index'
 
