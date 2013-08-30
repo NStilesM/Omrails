@@ -1,8 +1,9 @@
  namespace :db do
 	desc "Fill database with sample data"
   	task populate: :environment do
-  		puts "Deleting existing users"
+  		puts "Deleting existing users and pins, nicholas is stupid"
 	 	User.delete_all
+	 	Pin.delete_all
     	10.times do |n|
       		puts "[DEBUG] creating user #{n+1} of 10"
       		name = Faker::Name.name
